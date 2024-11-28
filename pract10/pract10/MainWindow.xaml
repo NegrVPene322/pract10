@@ -1,0 +1,40 @@
+﻿<Window x:Class="pract10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pract10"
+        mc:Ignorable="d"
+        Title="10 практическая" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="181*"/>
+            <RowDefinition Height="36*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="197*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Content="Управление списком" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="tb_input" Margin="5"></TextBox>
+            <Button Content="Добавить элемент" Margin="5" Name="bt_add" Click="bt_add_Click"></Button>
+            <Button Content="Удалить элемент" Margin="5" Name="bt_remove" Click="bt_remove_Click" ></Button>
+            <Button Content="Очистить" Name="bt_clear" Margin="5" Click="bt_clear_Click" ></Button>
+            
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <ListBox Height="200" x:Name="lb_1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+            <Label HorizontalAlignment="Center" Content="Среднее арифметическое всех отрицательных чисел"></Label>
+            <TextBox Margin="5" Name="tb_rez" IsReadOnly="True"></TextBox>
+            <Button Content="Посчитать результат" Name="bt_calc"  Margin="5" Click="bt_calc_Click"> </Button>
+        </StackPanel>
+
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="1">
+            <Button Content="Выход" Name="bt_esc" Margin="5" Click="bt_esc_Click"></Button>
+            <Button Content="Информация" Name="bt_inf" Margin="5" Click="bt_inf_Click"> </Button>
+        </StackPanel>
+    </Grid>
+</Window>
